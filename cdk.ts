@@ -1,6 +1,6 @@
 import * as cdk from "aws-cdk-lib";
-import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cf from "aws-cdk-lib/aws-cloudfront";
+import * as s3 from "aws-cdk-lib/aws-s3";
 import * as deployment from "aws-cdk-lib/aws-s3-deployment";
 
 const app = new cdk.App();
@@ -9,6 +9,9 @@ const prefix = "rs-aws-shop-react";
 
 const stack = new cdk.Stack(app, `${prefix}-stack`, {
     description: `This stack includes resources needed to deploy ${prefix} application`,
+    env: {
+        region: 'eu-west-3'
+    }
 });
 
 const bucket = new s3.Bucket(stack, `${prefix}-bucket`, {
