@@ -10,7 +10,7 @@ const prefix = "rs-aws-shop-react";
 const stack = new cdk.Stack(app, `${prefix}-stack`, {
     description: `This stack includes resources needed to deploy ${prefix} application`,
     env: {
-        region: 'eu-west-3'
+        region: 'eu-west-1'
     }
 });
 
